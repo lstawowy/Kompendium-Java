@@ -59,12 +59,12 @@ public void addShapes() {
 	for (int c = 0; c < Map.columns; c++) {
 		for (int r = 0; r < Map.rows; r++) {
 			Shape newShape = null;
-			if(Map.board[r][c]!=null) {
-				if(Map.board[r][c]==0) {
+			if (Map.board.checkPointValue(r, c) != null) {
+				if (Map.board.checkPointValue(r, c) == 0) {
 					newShape = new DrawO(r * (Map.width / Map.rows), c * (Map.height / Map.columns));
 					Map.listOfShapes.add(newShape);
 				} else {
-					if(Map.board[r][c]==1){
+					if (Map.board.checkPointValue(r, c) == 1) {
 						newShape = new DrawX(r * (Map.width / Map.rows), c * (Map.height / Map.columns));
 						Map.listOfShapes.add(newShape);
 					}
@@ -81,8 +81,8 @@ public MouseListener createNewMouseListener(){
 		public void mouseClicked(MouseEvent e) {
 			int x = e.getX();
 			int y = e.getY();
-			Boolean validMove = Map.addOnBoard(Map.currentPlayer.getValue(),x/(Map.width/Map.columns),y/(Map.height/Map.rows));
-			if(validMove){
+			if (Map.board.checkPointValue(x / (Map.width / Map.columns), y / (Map.height / Map.rows)) == null) {
+				Map.addOnBoard(Map.currentPlayer.getValue(), x / (Map.width / Map.columns), y / (Map.height / Map.rows));
 				Map.nextPlayer();
 			}
 			addShapes();

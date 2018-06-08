@@ -15,6 +15,7 @@ public static void main(String[] args) {
 
 public GUI() {
 	guiFrame = new JFrame();
+	guiFrame.setLayout(new GridLayout());
 	guiFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	guiFrame.setTitle("TicTacToe GUI");
 	guiFrame.setSize(Map.width, Map.height);
@@ -22,13 +23,19 @@ public GUI() {
 	guiFrame.setResizable(false);
 	JButton playerVsAiButton = new JButton("Player vs AI");
 	setUpPlayButton(playerVsAiButton);
-	guiFrame.add(playerVsAiButton, BorderLayout.NORTH);
 	JButton aiVsAiButton = new JButton("AI vs AI");
 	setUpPlayButton(aiVsAiButton);
-	guiFrame.add(aiVsAiButton, BorderLayout.AFTER_LAST_LINE);
 	JButton settingsButton = new JButton("Settings");
 	setUpPlayButton(settingsButton);
-	guiFrame.add(settingsButton, BorderLayout.AFTER_LINE_ENDS);
+
+	JPanel panel = new JPanel();
+	panel.add(playerVsAiButton);
+	panel.add(aiVsAiButton);
+	panel.add(settingsButton);
+	panel.setSize(300, 200);
+	panel.setAlignmentX(Map.width / 2);
+	panel.setAlignmentY(Map.height / 2);
+	guiFrame.getContentPane().add(panel);
 	guiFrame.setVisible(true);
 }
 

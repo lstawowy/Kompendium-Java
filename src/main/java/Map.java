@@ -8,7 +8,7 @@ public static Integer width = 1200;
 public static Integer height = 800;
 public static Integer rows;
 public static Integer columns;
-public static Integer[][] board;
+public static Board board;
 public static List<Shape> listOfShapes = new ArrayList<>();
 public static Player currentPlayer;
 public static List<Player> players;
@@ -19,7 +19,7 @@ public static void getValidMoves() {
 
 }
 
-public static void initializeMap(Integer _width, Integer _height, Integer _rows, Integer _columns, Integer[][] _board, Player _currentPlayer, List<Player> _players) {
+public static void initializeMap(Integer _width, Integer _height, Integer _rows, Integer _columns, Board _board, Player _currentPlayer, List<Player> _players) {
 	width = _width;
 	height = _height;
 	rows = _rows;
@@ -30,8 +30,8 @@ public static void initializeMap(Integer _width, Integer _height, Integer _rows,
 
 }
 
-public static Integer[][] addPointsOnBoardAndReturnBoard(List<PointOnMap> pointOnMapList) {
-	Integer[][] newBoard = Map.board;
+public static Board addPointsOnBoardAndReturnBoard(List<PointOnMap> pointOnMapList) {
+	Board newBoard = Map.board;
 	ForkJoinPool myPool = new ForkJoinPool(howManyThreads);
 	return newBoard;
 }
@@ -41,18 +41,14 @@ public static void initializeMap(Integer _width, Integer _height, Integer _rows,
 	height = _height;
 	rows = _rows;
 	columns = _columns;
-	board = new Integer[rows][columns];
+	board = new Board(new Integer[rows][columns]);
 	currentPlayer = _currentPlayer;
 	players = _players;
 }
 
-public static Boolean addOnBoard(Integer value, Integer column, Integer row) {
-	if (board[column][row] == null) {
-		board[column][row] = value;
-		return Boolean.TRUE;
-	} else {
-		return Boolean.FALSE;
-	}
+public static void addOnBoard(Integer value, Integer column, Integer row) {
+	board.addPoint(new PointOnMap(row, column, value));
+	board.checkIfNotWon();
 }
 
 public static Player nextPlayer() {
@@ -91,4 +87,10 @@ public static Integer[][] randomBoard(int rows, int columns) {
 	return board;
 }
 
+public static void secondPlayerWonMessage() {
+
+}
+
+public static void firstPlayerWonMessage() {
+}
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
@@ -22,6 +23,10 @@ public Board(Integer[][] board, PointOnMap pointOnMap) {
 
 public Board(Board board, PointOnMap pointOnMap) {
 	this.board = board.addPoint(pointOnMap);
+}
+
+public Integer checkPointValue(int row, int column) {
+	return board[row][column];
 }
 
 public List<Chain> getFirstPlayerChains() {
@@ -308,4 +313,17 @@ public Integer[][] addPoint(PointOnMap pointOnMap) {
 	return this.board;
 }
 
+public void checkIfNotWon() {
+	getChains();
+	Chain maxFirstChain = firstPlayerChains.parallelStream().max(Comparator.comparingInt((Chain c) -> c.countValue()))
+			.get();
+	if (maxFirstChain.getValue() == 1000) {
+		Map.firstPlayerWonMessage();
+	}
+	Chain maxSecondChain = secondPlayerChains.parallelStream().max(Comparator.comparingInt((Chain c) -> c.countValue()))
+			.get();
+	if (maxSecondChain.getValue() == 1000) {
+		Map.secondPlayerWonMessage();
+	}
+}
 }
