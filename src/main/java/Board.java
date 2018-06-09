@@ -137,6 +137,18 @@ public void getChains() {
 	}
 }
 
+public Integer[][] getNewInstanceOfBoard() {
+	Integer[][] newInstance = new Integer[board.length][board[0].length];
+	for (int r = 0; r < board.length; r++) {
+		for (int c = 0; c < board[0].length; c++) {
+			if (board[r][c] != null) {
+				newInstance[r][c] = board[r][c];
+			}
+		}
+	}
+	return newInstance;
+}
+
 public void addChain(Integer playerValue, Chain chain) {
 	if (chain != null) {
 		if (playerValue.equals(firstPlayerValue)) {

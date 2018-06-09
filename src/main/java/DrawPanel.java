@@ -129,8 +129,8 @@ public MouseListener createNewMouseListener(){
 }
 
 public PointOnMap getAnotherMoveForAI() throws ExecutionException, InterruptedException {
-	Board temporaryBoard = new Board(Map.board.getBoard());
-	PointOnMap maxPoint = getNextMinMaxPoint(1, temporaryBoard);
+	Integer[][] map = Map.board.getNewInstanceOfBoard();
+	PointOnMap maxPoint = getNextMinMaxPoint(1, new Board(map));
 	return maxPoint;
 }
 
@@ -144,12 +144,13 @@ private PointOnMap getNextMinMaxPoint(Integer iteration, Board temporaryBoard) t
 	Integer max = -1000000;
 	Integer min = 1000000;
 	PointOnMap result = null;
-	for (PointOnMap move : temporaryBoard.getValidMoves((iteration + 1) % 2)) {
-		temporaryBoard.addPoint(move);
-//		if(iteration<Map.howManyMovesForward) {
-//			getNextMinMaxPoint(iteration + 1, temporaryBoard);
-//		}
-		Integer temp = temporaryBoard.getValue(Map.currentPlayer.getValue());
+	for (PointOnMap move : temporaryBoard.getValidMoves((iteration) % 2)) {
+		Board temporarierBoard = new Board(temporaryBoard.getNewInstanceOfBoard());
+		temporarierBoard.addPoint(move);
+		if (iteration < Map.howManyMovesForward) {
+			getNextMinMaxPoint(iteration + 1, temporaryBoard);
+		}
+		Integer temp = temporarierBoard.getValue(Map.currentPlayer.getValue());
 		if (isMax && max < temp) {
 			max = temp;
 			result = move;
