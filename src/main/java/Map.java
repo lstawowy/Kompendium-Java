@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.ForkJoinPool;
 
 public class Map {
 public static Integer width = 1200;
@@ -13,11 +12,9 @@ public static List<Shape> listOfShapes = new ArrayList<>();
 public static Player currentPlayer;
 public static List<Player> players;
 public static Integer howManyThreads = 8;
+public static Integer howManyMovesForward = 1;
 
 
-public static void getValidMoves() {
-
-}
 
 public static void initializeMap(Integer _width, Integer _height, Integer _rows, Integer _columns, Board _board, Player _currentPlayer, List<Player> _players) {
 	width = _width;
@@ -28,12 +25,6 @@ public static void initializeMap(Integer _width, Integer _height, Integer _rows,
 	currentPlayer = _currentPlayer;
 	players = _players;
 
-}
-
-public static Board addPointsOnBoardAndReturnBoard(List<PointOnMap> pointOnMapList) {
-	Board newBoard = Map.board;
-	ForkJoinPool myPool = new ForkJoinPool(howManyThreads);
-	return newBoard;
 }
 
 public static void initializeMap(Integer _width, Integer _height, Integer _rows, Integer _columns, Player _currentPlayer, List<Player> _players) {
@@ -58,10 +49,6 @@ public static Player nextPlayer() {
 		currentPlayer = players.get(0);
 	return currentPlayer;
 }
-
-
-
-
 
 public static Integer[][] randomBoard(int rows, int columns) {
 	Random randomGenerator = new Random();

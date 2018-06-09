@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8530a67a-3495-4d89-82db-9b5734e1f36e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/Board.class" afterPath="$PROJECT_DIR$/out/production/classes/Board.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/Chain.class" afterPath="$PROJECT_DIR$/out/production/classes/Chain.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/DrawPanel$1.class" afterPath="$PROJECT_DIR$/out/production/classes/DrawPanel$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/DrawPanel.class" afterPath="$PROJECT_DIR$/out/production/classes/DrawPanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/GUI$1.class" afterPath="$PROJECT_DIR$/out/production/classes/GUI$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/GUI.class" afterPath="$PROJECT_DIR$/out/production/classes/GUI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/Map.class" afterPath="$PROJECT_DIR$/out/production/classes/Map.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/PointOnMap.class" afterPath="$PROJECT_DIR$/out/production/classes/PointOnMap.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Board.java" afterPath="$PROJECT_DIR$/src/main/java/Board.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Chain.java" afterPath="$PROJECT_DIR$/src/main/java/Chain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DrawPanel.java" afterPath="$PROJECT_DIR$/src/main/java/DrawPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/GUI.java" afterPath="$PROJECT_DIR$/src/main/java/GUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Map.java" afterPath="$PROJECT_DIR$/src/main/java/Map.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Player.java" afterPath="$PROJECT_DIR$/src/main/java/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/PointOnMap.java" afterPath="$PROJECT_DIR$/src/main/java/PointOnMap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/BoardTest.java" afterPath="$PROJECT_DIR$/src/test/java/BoardTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -17,21 +33,42 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/TicTacToe$ChainTest.coverage" NAME="ChainTest Coverage Results" MODIFIED="1527802030071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TicTacToe$BoardTest.coverage" NAME="BoardTest Coverage Results" MODIFIED="1527867260225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TicTacToe$DrawPanelTest_getValidMoves.coverage" NAME="DrawPanelTest.getValidMoves Coverage Results" MODIFIED="1528578827841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TicTacToe$DrawPanelTest_getAnotherMoveForAI.coverage" NAME="DrawPanelTest.getAnotherMoveForAI Coverage Results" MODIFIED="1528581671051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TicTacToe$All_in_TicTacToe_test__1_.coverage" NAME="All in TicTacToe_test (1) Coverage Results" MODIFIED="1528584527129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TicTacToe$DrawPanelTest_boardAddOnBoard.coverage" NAME="DrawPanelTest.boardAddOnBoard Coverage Results" MODIFIED="1528579145527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TicTacToe$All_in_TicTacToe_test.coverage" NAME="All in TicTacToe_test Coverage Results" MODIFIED="1527867273176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TicTacToe$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1528582694348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
-  <component name="ExternalProjectsManager" storeExternally="true" />
+  <component name="ExternalProjectsManager" storeExternally="true">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TicTacToe" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Map.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="776">
-              <caret line="95" column="1" lean-forward="true" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
+            <state relative-caret-position="32">
+              <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -39,18 +76,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Board.java">
+      <file leaf-file-name="Chain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Chain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4896">
-              <caret line="320" column="27" lean-forward="false" selection-start-line="320" selection-start-column="27" selection-end-line="320" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
-                <element signature="e#711#712#0" expanded="true" />
-                <element signature="e#766#767#0" expanded="true" />
-                <element signature="e#796#797#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-352">
+              <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -58,8 +89,8 @@
       <file leaf-file-name="DrawPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/DrawPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1280">
-              <caret line="84" column="25" lean-forward="false" selection-start-line="84" selection-start-column="25" selection-end-line="84" selection-end-column="25" />
+            <state relative-caret-position="189">
+              <caret line="139" column="29" lean-forward="true" selection-start-line="139" selection-start-column="29" selection-end-line="139" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,21 +98,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PointOnMap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/PointOnMap.java">
+      <file leaf-file-name="BoardTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/BoardTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="224">
-              <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Player.java">
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="53" column="1" lean-forward="false" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+            <state relative-caret-position="272">
+              <caret line="123" column="74" lean-forward="false" selection-start-line="123" selection-start-column="74" selection-end-line="123" selection-end-column="74" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#957#958#0" expanded="true" />
+                <element signature="e#986#987#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DrawPanelTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/DrawPanelTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="26" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -96,6 +151,11 @@
         <option value="JUnit4 Test Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -396,17 +456,19 @@
         <option value="$PROJECT_DIR$/src/main/java/PlayerInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/DrawSTAR.java" />
         <option value="$PROJECT_DIR$/src/main/java/AI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/DrawO.java" />
         <option value="$PROJECT_DIR$/src/main/java/DrawX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/PointOnMap.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Chain.java" />
-        <option value="$PROJECT_DIR$/src/test/java/BoardTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ChainTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DrawPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PointOnMap.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PointsOnMap.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Chain.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Board.java" />
         <option value="$PROJECT_DIR$/src/main/java/Map.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DrawPanel.java" />
+        <option value="$PROJECT_DIR$/src/test/java/DrawPanelTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Board.java" />
+        <option value="$PROJECT_DIR$/src/test/java/BoardTest.java" />
       </list>
     </option>
   </component>
@@ -448,8 +510,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -480,12 +540,27 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TicTacToe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TicTacToe" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="TicTacToe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TicTacToe" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -500,14 +575,14 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\STUDIA\GIT\TicTacToe\com" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\STUDIA\GIT\TicTacToe\com" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -523,7 +598,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.GUI">
-    <configuration name="All in TicTacToe_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in TicTacToe_test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="TicTacToe_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -543,15 +618,15 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="BoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DrawPanelTest.boardAddOnBoard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="TicTacToe_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BoardTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="DrawPanelTest" />
+      <option name="METHOD_NAME" value="boardAddOnBoard" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -563,15 +638,35 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="ChainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DrawPanelTest.getAnotherMoveForAI" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="TicTacToe_test" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ChainTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="DrawPanelTest" />
+      <option name="METHOD_NAME" value="getAnotherMoveForAI" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="DrawPanelTest.getValidMoves" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="TicTacToe_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DrawPanelTest" />
+      <option name="METHOD_NAME" value="getValidMoves" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -677,18 +772,20 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.GUI" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ChainTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.BoardTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.All in TicTacToe_test" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DrawPanelTest.getValidMoves" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.DrawPanelTest.boardAddOnBoard" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DrawPanelTest.getAnotherMoveForAI" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.All in TicTacToe_test (1)" />
     </list>
     <recent_temporary>
-      <list size="4">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.GUI" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.All in TicTacToe_test" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.BoardTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ChainTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.All in TicTacToe_test (1)" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DrawPanelTest.getAnotherMoveForAI" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DrawPanelTest.boardAddOnBoard" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DrawPanelTest.getValidMoves" />
       </list>
     </recent_temporary>
   </component>
@@ -714,35 +811,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_TicTacToe_test - 2018.06.03 at 12h 56m 23s.xml">
-      <configuration name="All in TicTacToe_test" configurationId="JUnit" />
+    <history-entry file="All_in_TicTacToe_test_(1) - 2018.06.10 at 00h 48m 51s.xml">
+      <configuration name="All in TicTacToe_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_TicTacToe_test - 2018.06.03 at 13h 12m 18s.xml">
-      <configuration name="All in TicTacToe_test" configurationId="JUnit" />
+    <history-entry file="All_in_TicTacToe_test_(1) - 2018.06.10 at 00h 53m 11s.xml">
+      <configuration name="All in TicTacToe_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest - 2018.06.01 at 17h 13m 59s.xml">
-      <configuration name="BoardTest" configurationId="JUnit" />
+    <history-entry file="All_in_TicTacToe_test_(1) - 2018.06.10 at 01h 00m 06s.xml">
+      <configuration name="All in TicTacToe_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest - 2018.06.01 at 17h 20m 22s.xml">
-      <configuration name="BoardTest" configurationId="JUnit" />
+    <history-entry file="All_in_TicTacToe_test_(1) - 2018.06.10 at 01h 02m 21s.xml">
+      <configuration name="All in TicTacToe_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest - 2018.06.01 at 17h 20m 38s.xml">
-      <configuration name="BoardTest" configurationId="JUnit" />
+    <history-entry file="All_in_TicTacToe_test_(1) - 2018.06.10 at 01h 09m 04s.xml">
+      <configuration name="All in TicTacToe_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest - 2018.06.01 at 17h 23m 30s.xml">
-      <configuration name="BoardTest" configurationId="JUnit" />
+    <history-entry file="All_in_TicTacToe_test_(1) - 2018.06.10 at 01h 11m 47s.xml">
+      <configuration name="All in TicTacToe_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest - 2018.06.01 at 17h 28m 08s.xml">
-      <configuration name="BoardTest" configurationId="JUnit" />
+    <history-entry file="All_in_TicTacToe_test_(1) - 2018.06.10 at 01h 11m 53s.xml">
+      <configuration name="All in TicTacToe_test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest - 2018.06.01 at 17h 29m 35s.xml">
-      <configuration name="BoardTest" configurationId="JUnit" />
+    <history-entry file="DrawPanelTest_getAnotherMoveForAI - 2018.06.10 at 00h 01m 58s.xml">
+      <configuration name="DrawPanelTest.getAnotherMoveForAI" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest - 2018.06.01 at 17h 33m 49s.xml">
-      <configuration name="BoardTest" configurationId="JUnit" />
+    <history-entry file="DrawPanelTest_getAnotherMoveForAI - 2018.06.10 at 00h 02m 32s.xml">
+      <configuration name="DrawPanelTest.getAnotherMoveForAI" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BoardTest - 2018.06.01 at 17h 34m 23s.xml">
-      <configuration name="BoardTest" configurationId="JUnit" />
+    <history-entry file="DrawPanelTest_getAnotherMoveForAI - 2018.06.10 at 00h 04m 24s.xml">
+      <configuration name="DrawPanelTest.getAnotherMoveForAI" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -750,18 +847,20 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.03837953" sideWeight="0.50567263" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3065032" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3097015" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.03837953" sideWeight="0.4943274" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -772,9 +871,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10127932" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -820,18 +917,43 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/DrawPanelTest.java</url>
+          <line>54</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager>
-      <configuration name="Application">
-        <watch expression="Map.board" language="JAVA" />
-        <watch expression="Map.currentPlayer" language="JAVA" />
-        <watch expression="playButton.getName()" language="JAVA" />
-        <watch expression="playButton.getActionCommand()" language="JAVA" />
+      <configuration name="JUnit">
+        <watch expression="board.firstPlayerChains.get(0)" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DrawPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2320">
+          <caret line="145" column="8" lean-forward="false" selection-start-line="145" selection-start-column="8" selection-end-line="147" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Map.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -848,10 +970,10 @@
           <caret line="320" column="27" lean-forward="false" selection-start-line="320" selection-start-column="27" selection-end-line="320" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#711#712#0" expanded="true" />
-            <element signature="e#766#767#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#648#649#0" expanded="false" />
+            <element signature="e#665#666#0" expanded="false" />
+            <element signature="e#708#709#0" expanded="false" />
+            <element signature="e#731#732#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -975,13 +1097,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/PlayerInterface.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/AI.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-9/lib/src.zip!/java.desktop/javax/swing/JFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="677" column="16" lean-forward="false" selection-start-line="677" selection-start-column="16" selection-end-line="677" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9/lib/src.zip!/java.base/java/lang/Runnable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
@@ -1027,26 +1142,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BoardTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ChainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1071,69 +1166,123 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Chain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/PointOnMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        <state relative-caret-position="16">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="53" column="1" lean-forward="false" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+        <state relative-caret-position="441">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PointsOnMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-231">
-          <caret line="43" column="30" lean-forward="true" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+        <state relative-caret-position="112">
+          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ChainTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="33" column="51" lean-forward="true" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9/lib/src.zip!/java.desktop/java/awt/event/MouseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="63" column="16" lean-forward="false" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9/lib/src.zip!/java.desktop/javax/swing/JFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="739" column="20" lean-forward="false" selection-start-line="739" selection-start-column="20" selection-end-line="739" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9/lib/src.zip!/java.desktop/java/awt/Container.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="2062" column="16" lean-forward="false" selection-start-line="2062" selection-start-column="16" selection-end-line="2062" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DrawPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1280">
-          <caret line="84" column="25" lean-forward="false" selection-start-line="84" selection-start-column="25" selection-end-line="84" selection-end-column="25" />
+        <state relative-caret-position="189">
+          <caret line="139" column="29" lean-forward="true" selection-start-line="139" selection-start-column="29" selection-end-line="139" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4896">
-          <caret line="320" column="27" lean-forward="false" selection-start-line="320" selection-start-column="27" selection-end-line="320" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#711#712#0" expanded="true" />
-            <element signature="e#766#767#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="249">
+          <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="776">
-          <caret line="95" column="1" lean-forward="true" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
+        <state relative-caret-position="32">
+          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Chain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-352">
+          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="123" column="74" lean-forward="false" selection-start-line="123" selection-start-column="74" selection-end-line="123" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#957#958#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DrawPanelTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="26" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/BoardTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>

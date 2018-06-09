@@ -64,6 +64,8 @@ private void setUpPlayButton(JButton playButton) {
 }
 
 private void setPlayersAndMapForPlayerVsAI() {
+	Map.listOfShapes.clear();
+	Map.listOfShapes = new ArrayList<>();
 	Player firstPlayer = new Player(0, Sign.O);
 	Player secondPlayer = new Player(1, Sign.X, Boolean.TRUE);
 	List<Player> playerList = new ArrayList<>();
@@ -75,6 +77,8 @@ private void setPlayersAndMapForPlayerVsAI() {
 }
 
 private void setPlayersAndMapForAIVsAI() {
+	Map.listOfShapes.clear();
+	Map.listOfShapes = new ArrayList<>();
 	Player firstPlayer = new Player(0, Sign.O, Boolean.TRUE);
 	Player secondPlayer = new Player(1, Sign.X, Boolean.TRUE);
 	List<Player> playerList = new ArrayList<>();

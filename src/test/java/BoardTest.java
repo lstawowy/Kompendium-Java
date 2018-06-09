@@ -3,7 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class BoardTest {
-private static final Integer getValueResult = -2;
+private static final Integer getValueResult = -4;
 private Board board;
 
 @Before
@@ -29,8 +29,8 @@ public void getValue() throws Exception {
 
 @Test
 public void getChains() throws Exception {
-	Assert.assertEquals(4,board.getFirstPlayerChains().size());
-	Assert.assertEquals(4,board.getSecondPlayerChains().size());
+	Assert.assertEquals(5, board.getFirstPlayerChains().size());
+	Assert.assertEquals(7, board.getSecondPlayerChains().size());
 }
 
 @Test

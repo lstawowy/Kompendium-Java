@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
@@ -21,6 +20,14 @@ public Board(Integer[][] board, PointOnMap pointOnMap) {
 	this.board = tempBoard.addPoint(pointOnMap);
 }
 
+public Integer[][] getBoard() {
+	return board;
+}
+
+public void setBoard(Integer[][] board) {
+	this.board = board;
+}
+
 public Board(Board board, PointOnMap pointOnMap) {
 	this.board = board.addPoint(pointOnMap);
 }
@@ -38,14 +45,23 @@ public List<Chain> getSecondPlayerChains() {
 }
 
 public Integer getValue(Integer playerValue) throws ExecutionException, InterruptedException {
+	this.getChains();
 	Integer countedValue = 0;
-	if(playerValue.equals(firstPlayerValue)) {
-		countedValue += firstPlayerChains.parallelStream().collect(Collectors.summingInt(Chain::countValue));
-		countedValue -= secondPlayerChains.parallelStream().collect(Collectors.summingInt(Chain::countValue));
-	}
-	else {
-		countedValue -= firstPlayerChains.parallelStream().collect(Collectors.summingInt(Chain::countValue));
-		countedValue += secondPlayerChains.parallelStream().collect(Collectors.summingInt(Chain::countValue));
+	if (playerValue.equals(firstPlayerValue)) {
+		if (firstPlayerChains != null) {
+			countedValue += firstPlayerChains.parallelStream().collect(Collectors.summingInt(Chain::countValue));
+		}
+		if (secondPlayerChains != null) {
+			countedValue -= secondPlayerChains.parallelStream().collect(Collectors.summingInt(Chain::countValue));
+		}
+
+	} else {
+		if (firstPlayerChains != null) {
+			countedValue -= firstPlayerChains.parallelStream().collect(Collectors.summingInt(Chain::countValue));
+		}
+		if (secondPlayerChains != null) {
+			countedValue += secondPlayerChains.parallelStream().collect(Collectors.summingInt(Chain::countValue));
+		}
 	}
 	this.value = countedValue;
 	return countedValue;
@@ -79,10 +95,10 @@ public void getChains() {
 					}
 					if (checkDown(r, c, playerValue)) {
 						Integer down = 1;
-						while (checkDown(r, c + down, playerValue)) {
+						while (checkDown(r + down, c, playerValue)) {
 							down++;
 						}
-						PointOnMap endPoint = new PointOnMap(r, c + down, playerValue);
+						PointOnMap endPoint = new PointOnMap(r + down, c, playerValue);
 						Boolean leftSideOpen = simpleCheckUp(r, c, playerValue);
 						Boolean rightSideOpen = simpleCheckDown(r + down, c, playerValue);
 						chain = new Chain(leftSideOpen, rightSideOpen, down + 1, startPoint, endPoint);
@@ -93,9 +109,9 @@ public void getChains() {
 						while (checkDiagonalRightDown(r + down, c + down, playerValue)) {
 							down++;
 						}
-						PointOnMap endPoint = new PointOnMap(r, c + down, playerValue);
+						PointOnMap endPoint = new PointOnMap(r + down, c + down, playerValue);
 						Boolean leftSideOpen = simpleCheckDiagonalLeftUp(r, c, playerValue);
-						Boolean rightSideOpen = simpleCheckDiagonalRightDown(r + down, c, playerValue);
+						Boolean rightSideOpen = simpleCheckDiagonalRightDown(r + down, c + down, playerValue);
 						chain = new Chain(leftSideOpen, rightSideOpen, down + 1, startPoint, endPoint);
 						addChain(playerValue, chain);
 					}
@@ -104,7 +120,7 @@ public void getChains() {
 						while (checkDiagonalLeftDown(r + down, c - down, playerValue)) {
 							down++;
 						}
-						PointOnMap endPoint = new PointOnMap(r, c + down, playerValue);
+						PointOnMap endPoint = new PointOnMap(r + down, c - down, playerValue);
 						Boolean leftSideOpen = simpleCheckDiagonalRightUp(r, c, playerValue);
 						Boolean rightSideOpen = simpleCheckDiagonalLeftDown(r + down, c - down, playerValue);
 						chain = new Chain(leftSideOpen, rightSideOpen, down + 1, startPoint, endPoint);
@@ -209,11 +225,75 @@ public Boolean checkDiagonalLeftDown(Integer row, Integer column, Integer player
 }
 
 public Boolean simpleCheckAll(Integer row, Integer column, Integer playerValue) {
-	if (simpleCheckUp(row, column, playerValue) || simpleCheckDown(row, column, playerValue) || simpleCheckRight(row, column, playerValue) || simpleCheckLeft(row, column, playerValue) || simpleCheckDiagonalRightDown(row, column, playerValue) || simpleCheckDiagonalLeftDown(row, column, playerValue) || simpleCheckDiagonalRightUp(row, column, playerValue) || simpleCheckDiagonalLeftUp(row, column, playerValue)) {
-		return Boolean.TRUE;
-	} else {
-		return Boolean.FALSE;
+	if (row + 2 <= board.length && column + 2 <= board[0].length && row - 1 > 1 && column - 1 > 1) {
+		if (simpleCheckUp(row, column, playerValue) || simpleCheckDown(row, column, playerValue) || simpleCheckRight(row, column, playerValue) || simpleCheckLeft(row, column, playerValue) || simpleCheckDiagonalRightDown(row, column, playerValue) || simpleCheckDiagonalLeftDown(row, column, playerValue) || simpleCheckDiagonalRightUp(row, column, playerValue) || simpleCheckDiagonalLeftUp(row, column, playerValue)) {
+			return Boolean.TRUE;
+		} else {
+			return Boolean.FALSE;
+		}
 	}
+
+	if (row == 0 && column + 1 <= board[0].length && column - 1 > 0) {
+		if (simpleCheckDown(row, column, playerValue) || simpleCheckRight(row, column, playerValue) || simpleCheckLeft(row, column, playerValue) || simpleCheckDiagonalRightDown(row, column, playerValue) || simpleCheckDiagonalLeftDown(row, column, playerValue)) {
+			return Boolean.TRUE;
+		} else {
+			return Boolean.FALSE;
+		}
+	}
+	if (row == (board.length - 1) && column + 1 <= board[0].length && column - 1 > 0) {
+		if (simpleCheckUp(row, column, playerValue) || simpleCheckRight(row, column, playerValue) || simpleCheckLeft(row, column, playerValue) || simpleCheckDiagonalRightUp(row, column, playerValue) || simpleCheckDiagonalLeftUp(row, column, playerValue)) {
+			return Boolean.TRUE;
+		} else {
+			return Boolean.FALSE;
+		}
+	}
+
+	if (row + 2 <= board.length && column == (board[0].length - 1) && row - 1 > 1) {
+		if (simpleCheckUp(row, column, playerValue) || simpleCheckDown(row, column, playerValue) || simpleCheckLeft(row, column, playerValue) || simpleCheckDiagonalLeftDown(row, column, playerValue) || simpleCheckDiagonalLeftUp(row, column, playerValue)) {
+			return Boolean.TRUE;
+		} else {
+			return Boolean.FALSE;
+		}
+	}
+	if (row + 2 <= board.length && column == 0 && row - 1 > 1) {
+		if (simpleCheckUp(row, column, playerValue) || simpleCheckDown(row, column, playerValue) || simpleCheckRight(row, column, playerValue) || simpleCheckDiagonalRightDown(row, column, playerValue) || simpleCheckDiagonalRightUp(row, column, playerValue)) {
+			return Boolean.TRUE;
+		} else {
+			return Boolean.FALSE;
+		}
+	}
+
+	if (row == 0 && column == 0) {
+		if (simpleCheckDown(row, column, playerValue) || simpleCheckRight(row, column, playerValue) || simpleCheckDiagonalRightDown(row, column, playerValue)) {
+			return Boolean.TRUE;
+		} else {
+			return Boolean.FALSE;
+		}
+	}
+	if (row == 0 && column == (board[0].length - 1)) {
+		if (simpleCheckDown(row, column, playerValue) || simpleCheckLeft(row, column, playerValue) || simpleCheckDiagonalLeftDown(row, column, playerValue)) {
+			return Boolean.TRUE;
+		} else {
+			return Boolean.FALSE;
+		}
+	}
+	if (row == (board.length - 1) && column == 0) {
+		if (simpleCheckUp(row, column, playerValue) || simpleCheckRight(row, column, playerValue) || simpleCheckDiagonalRightUp(row, column, playerValue)) {
+			return Boolean.TRUE;
+		} else {
+			return Boolean.FALSE;
+		}
+	}
+	if (row == (board.length - 1) && column == (board[0].length - 1)) {
+		if (simpleCheckUp(row, column, playerValue) || simpleCheckLeft(row, column, playerValue) || simpleCheckDiagonalLeftUp(row, column, playerValue)) {
+			return Boolean.TRUE;
+		} else {
+			return Boolean.FALSE;
+		}
+	}
+
+
+	return Boolean.FALSE;
 
 }
 
@@ -259,6 +339,7 @@ public Boolean simpleCheckDown(Integer row, Integer column, Integer playerValue)
 	} else {
 		return Boolean.FALSE;
 	}
+
 }
 
 public Boolean simpleCheckDiagonalLeftUp(Integer row, Integer column, Integer playerValue) {
@@ -306,24 +387,36 @@ public Boolean simpleCheckDiagonalLeftDown(Integer row, Integer column, Integer 
 }
 
 public Integer[][] addPoint(PointOnMap pointOnMap) {
-	if (this.board[pointOnMap.column][pointOnMap.row] == null) {
-		this.board[pointOnMap.column][pointOnMap.row] = pointOnMap.value;
-
+	if (this.board[pointOnMap.row][pointOnMap.column] == null) {
+		this.board[pointOnMap.row][pointOnMap.column] = pointOnMap.value;
 	}
 	return this.board;
 }
 
 public void checkIfNotWon() {
 	getChains();
-	Chain maxFirstChain = firstPlayerChains.parallelStream().max(Comparator.comparingInt((Chain c) -> c.countValue()))
-			.get();
-	if (maxFirstChain.getValue() == 1000) {
-		Map.firstPlayerWonMessage();
+	for (Chain chain : firstPlayerChains) {
+		if (chain.countValue() == 1000) {
+			Map.firstPlayerWonMessage();
+		}
 	}
-	Chain maxSecondChain = secondPlayerChains.parallelStream().max(Comparator.comparingInt((Chain c) -> c.countValue()))
-			.get();
-	if (maxSecondChain.getValue() == 1000) {
-		Map.secondPlayerWonMessage();
+	for (Chain chain : secondPlayerChains) {
+		if (chain.countValue() == 1000) {
+			Map.firstPlayerWonMessage();
+		}
 	}
 }
+
+public List<PointOnMap> getValidMoves(Integer currentPlayerValue) {
+	List<PointOnMap> validMoves = new ArrayList<>();
+	for (int r = 0; r < board.length; r++) {
+		for (int c = 0; c < board[0].length; c++) {
+			if (board[r][c] == null) {
+				validMoves.add(new PointOnMap(r, c, currentPlayerValue));
+			}
+		}
+	}
+	return validMoves;
+}
+
 }

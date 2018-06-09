@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
 
 public class DrawPanel extends JPanel {
 	JFrame frame;
@@ -79,14 +80,7 @@ public MouseListener createNewMouseListener(){
 	return new MouseListener() {
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			int x = e.getX();
-			int y = e.getY();
-			if (Map.board.checkPointValue(x / (Map.width / Map.columns), y / (Map.height / Map.rows)) == null) {
-				Map.addOnBoard(Map.currentPlayer.getValue(), x / (Map.width / Map.columns), y / (Map.height / Map.rows));
-				Map.nextPlayer();
-			}
-			addShapes();
-			frame.paintComponents(frame.getGraphics());
+
 		}
 
 		@Override
@@ -96,6 +90,28 @@ public MouseListener createNewMouseListener(){
 
 		@Override
 		public void mouseReleased(MouseEvent e) {
+			if (!Map.currentPlayer.getAIEnabled()) {
+				int x = e.getX();
+				int y = e.getY();
+				if (Map.board.checkPointValue(x / (Map.width / Map.columns), y / (Map.height / Map.rows)) == null) {
+					Map.board.addPoint(new PointOnMap(x / (Map.width / Map.columns), y / (Map.height / Map.rows), Map.currentPlayer.getValue()));
+					Map.nextPlayer();
+				}
+				addShapes();
+				frame.paintComponents(frame.getGraphics());
+				if (Map.currentPlayer.getAIEnabled()) {
+					try {
+						Map.board.addPoint(getAnotherMoveForAI());
+						Map.nextPlayer();
+					} catch (ExecutionException e1) {
+
+					} catch (InterruptedException e1) {
+
+					}
+					addShapes();
+					frame.paintComponents(frame.getGraphics());
+				}
+			}
 
 		}
 
@@ -112,6 +128,37 @@ public MouseListener createNewMouseListener(){
 
 }
 
-
-
+public PointOnMap getAnotherMoveForAI() throws ExecutionException, InterruptedException {
+	Board temporaryBoard = new Board(Map.board.getBoard());
+	PointOnMap maxPoint = getNextMinMaxPoint(1, temporaryBoard);
+	return maxPoint;
 }
+
+private PointOnMap getNextMinMaxPoint(Integer iteration, Board temporaryBoard) throws ExecutionException, InterruptedException {
+	Boolean isMax = null;
+	if (iteration % 2 == 1) {
+		isMax = Boolean.TRUE;
+	} else {
+		isMax = Boolean.FALSE;
+	}
+	Integer max = -1000000;
+	Integer min = 1000000;
+	PointOnMap result = null;
+	for (PointOnMap move : temporaryBoard.getValidMoves((iteration + 1) % 2)) {
+		temporaryBoard.addPoint(move);
+//		if(iteration<Map.howManyMovesForward) {
+//			getNextMinMaxPoint(iteration + 1, temporaryBoard);
+//		}
+		Integer temp = temporaryBoard.getValue(Map.currentPlayer.getValue());
+		if (isMax && max < temp) {
+			max = temp;
+			result = move;
+		} else if (!isMax && min > temp) {
+			min = temp;
+			result = move;
+		}
+	}
+	return result;
+}
+}
+
