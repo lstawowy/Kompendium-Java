@@ -84,45 +84,45 @@ public void getChains() {
 					PointOnMap startPoint = new PointOnMap(r, c, playerValue);
 					if (checkRight(r, c, playerValue)) {
 						Integer right = 1;
-						while (checkRight(r, c + right, playerValue)) {
+						while (simpleCheckRight(r, c + right, playerValue)) {
 							right++;
 						}
 						PointOnMap endPoint = new PointOnMap(r, c + right, playerValue);
-						Boolean leftSideOpen = simpleCheckLeft(r, c, playerValue);
-						Boolean rightSideOpen = simpleCheckRight(r, c + right, playerValue);
+						Boolean leftSideOpen = simpleCheckLeft(r, c, null);
+						Boolean rightSideOpen = simpleCheckRight(r, c + right, null);
 						chain = new Chain(leftSideOpen, rightSideOpen, right + 1, startPoint, endPoint);
 						addChain(playerValue, chain);
 					}
 					if (checkDown(r, c, playerValue)) {
 						Integer down = 1;
-						while (checkDown(r + down, c, playerValue)) {
+						while (simpleCheckDown(r + down, c, playerValue)) {
 							down++;
 						}
 						PointOnMap endPoint = new PointOnMap(r + down, c, playerValue);
-						Boolean leftSideOpen = simpleCheckUp(r, c, playerValue);
-						Boolean rightSideOpen = simpleCheckDown(r + down, c, playerValue);
+						Boolean leftSideOpen = simpleCheckUp(r, c, null);
+						Boolean rightSideOpen = simpleCheckDown(r + down, c, null);
 						chain = new Chain(leftSideOpen, rightSideOpen, down + 1, startPoint, endPoint);
 						addChain(playerValue, chain);
 					}
 					if (checkDiagonalRightDown(r, c, playerValue)) {
 						Integer down = 1;
-						while (checkDiagonalRightDown(r + down, c + down, playerValue)) {
+						while (simpleCheckDiagonalRightDown(r + down, c + down, playerValue)) {
 							down++;
 						}
 						PointOnMap endPoint = new PointOnMap(r + down, c + down, playerValue);
-						Boolean leftSideOpen = simpleCheckDiagonalLeftUp(r, c, playerValue);
-						Boolean rightSideOpen = simpleCheckDiagonalRightDown(r + down, c + down, playerValue);
+						Boolean leftSideOpen = simpleCheckDiagonalLeftUp(r, c, null);
+						Boolean rightSideOpen = simpleCheckDiagonalRightDown(r + down, c + down, null);
 						chain = new Chain(leftSideOpen, rightSideOpen, down + 1, startPoint, endPoint);
 						addChain(playerValue, chain);
 					}
 					if (checkDiagonalLeftDown(r, c, playerValue)) {
 						Integer down = 1;
-						while (checkDiagonalLeftDown(r + down, c - down, playerValue)) {
+						while (simpleCheckDiagonalLeftDown(r + down, c - down, playerValue)) {
 							down++;
 						}
 						PointOnMap endPoint = new PointOnMap(r + down, c - down, playerValue);
-						Boolean leftSideOpen = simpleCheckDiagonalRightUp(r, c, playerValue);
-						Boolean rightSideOpen = simpleCheckDiagonalLeftDown(r + down, c - down, playerValue);
+						Boolean leftSideOpen = simpleCheckDiagonalRightUp(r, c, null);
+						Boolean rightSideOpen = simpleCheckDiagonalLeftDown(r + down, c - down, null);
 						chain = new Chain(leftSideOpen, rightSideOpen, down + 1, startPoint, endPoint);
 						addChain(playerValue, chain);
 					}
@@ -409,12 +409,12 @@ public void checkIfNotWon() {
 	getChains();
 	for (Chain chain : firstPlayerChains) {
 		if (chain.countValue() == 1000) {
-			Map.firstPlayerWonMessage();
+			DrawPanel.firstPlayerWonMessage();
 		}
 	}
 	for (Chain chain : secondPlayerChains) {
 		if (chain.countValue() == 1000) {
-			Map.firstPlayerWonMessage();
+			DrawPanel.firstPlayerWonMessage();
 		}
 	}
 }

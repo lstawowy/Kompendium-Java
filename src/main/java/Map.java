@@ -74,10 +74,5 @@ public static Integer[][] randomBoard(int rows, int columns) {
 	return board;
 }
 
-public static void secondPlayerWonMessage() {
 
-}
-
-public static void firstPlayerWonMessage() {
-}
 }

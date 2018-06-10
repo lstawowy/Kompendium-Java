@@ -47,13 +47,9 @@ static Color randomColor() {
 	return ret;
 }
 
-@Override
-public void paintComponent(Graphics g) {
-	Graphics2D g2d = (Graphics2D) g;
-	super.paintComponent(g2d);
-
-	for (Shape s : Map.listOfShapes)
-		s.draw(g2d);
+public static void secondPlayerWonMessage() {
+	JOptionPane.showMessageDialog(null, "Second player won");
+	new GUI();
 }
 
 public void addShapes() {
@@ -161,5 +157,29 @@ private PointOnMap getNextMinMaxPoint(Integer iteration, Board temporaryBoard) t
 	}
 	return result;
 }
+
+public static void firstPlayerWonMessage() {
+	JOptionPane.showMessageDialog(null, "First player won");
+	new GUI();
+}
+
+@Override
+public void paintComponent(Graphics g) {
+	Graphics2D g2d = (Graphics2D) g;
+	super.paintComponent(g2d);
+	for (int i = 0; i < (Map.board.getBoard().length); i++) {
+		g2d.setColor(new Color(0, 0, 0));
+		int y = (Map.height / Map.board.getBoard().length);
+		g2d.drawLine(0, i * y, Map.width, i * y);
+	}
+	for (int i = 0; i < (Map.board.getBoard()[0].length); i++) {
+		g2d.setColor(new Color(0, 0, 0));
+		int x = (Map.width / Map.board.getBoard()[0].length);
+		g2d.drawLine(i * x, 0, i * x, Map.height);
+	}
+	for (Shape s : Map.listOfShapes)
+		s.draw(g2d);
+}
+
 }
 

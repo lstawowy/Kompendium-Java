@@ -1,5 +1,7 @@
 public class Chain {
 private Boolean leftSideLimit;
+
+
 private Boolean rightSideLimit;
 private Integer length;
 private PointOnMap startPoint;
@@ -18,6 +20,20 @@ public Chain(Boolean leftSideLimit, Boolean rightSideLimit, Integer length, Poin
 public Integer getValue() {
 	return value;
 }
+
+
+public Integer getLength() {
+	return length;
+}
+
+public Boolean getLeftSideLimit() {
+	return leftSideLimit;
+}
+
+public Boolean getRightSideLimit() {
+	return rightSideLimit;
+}
+
 
 public Integer countValue() {
 	if (this != null) {

@@ -3,8 +3,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class BoardTest {
-private static final Integer getValueResult = -4;
+private static final Integer getValueResult = -8;
 private Board board;
+private Board board22;
 
 @Before
 public void setUp() {
@@ -17,8 +18,17 @@ public void setUp() {
 					{0, null, null, null, null}};
 	board = new Board(board1);
 	board.getChains();
-}
 
+	Integer[][] board2 =
+			{
+					{0, null, 1, null, null},
+					{0, 1, 0, 1, null},
+					{1, 0, 1, null, null},
+					{1, 1, 0, null, 0},
+					{0, null, null, null, null}};
+	board22 = new Board(board2);
+	board22.getChains();
+}
 
 @Test
 public void getValue() throws Exception {
@@ -31,6 +41,13 @@ public void getValue() throws Exception {
 public void getChains() throws Exception {
 	Assert.assertEquals(5, board.getFirstPlayerChains().size());
 	Assert.assertEquals(7, board.getSecondPlayerChains().size());
+}
+
+@Test
+public void getChains2() throws Exception {
+	Assert.assertEquals((Integer) 3, board22.getFirstPlayerChains().get(1).getLength());
+	Assert.assertEquals(Boolean.TRUE, board.getFirstPlayerChains().get(1).getRightSideLimit());
+	Assert.assertEquals(Boolean.FALSE, board.getFirstPlayerChains().get(1).getLeftSideLimit());
 }
 
 @Test
