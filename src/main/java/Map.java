@@ -3,8 +3,8 @@ import java.util.List;
 import java.util.Random;
 
 public class Map {
-public static Integer width = 1200;
-public static Integer height = 800;
+public static Integer width = 1600;
+public static Integer height = 1000;
 public static Integer rows;
 public static Integer columns;
 public static Board board;
@@ -12,7 +12,7 @@ public static List<Shape> listOfShapes = new ArrayList<>();
 public static Player currentPlayer;
 public static List<Player> players;
 public static Integer howManyThreads = 8;
-public static Integer howManyMovesForward = 1;
+public static Integer howManyMovesForward = 3;
 
 
 public static void initializeMap(Integer _width, Integer _height, Integer _rows, Integer _columns, Board _board, Player _currentPlayer, List<Player> _players) {

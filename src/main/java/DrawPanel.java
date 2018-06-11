@@ -82,6 +82,14 @@ public MouseListener createNewMouseListener() {
 
 		@Override
 		public void mouseReleased(MouseEvent e) {
+			if (Map.board.getFirstPlayerChains() == null && Map.board.getSecondPlayerChains() == null && Map.players.get(0).getAIEnabled() && Map.players.get(1).getAIEnabled()) {
+				PointOnMap firstMove = new PointOnMap(Map.rows / 2, Map.columns / 2, Map.currentPlayer.getValue());
+				Map.board.addPoint(firstMove);
+				Map.nextPlayer();
+				addShapes();
+				frame.paintComponents(frame.getGraphics());
+				Map.board.getChains();
+			}
 			if (!Map.currentPlayer.getAIEnabled()) {
 				int x = e.getX();
 				int y = e.getY();
@@ -134,8 +142,32 @@ public MouseListener createNewMouseListener() {
 					}
 				}
 			}
+			while (Map.currentPlayer.getAIEnabled()) {
+				try {
+					Map.board.addPoint(getAnotherMoveForAI());
+					Map.nextPlayer();
+				} catch (ExecutionException e1) {
 
+				} catch (InterruptedException e1) {
 
+				}
+				addShapes();
+				frame.paintComponents(frame.getGraphics());
+			}
+			if (Map.board.getFirstPlayerChains() != null && Map.board.getSecondPlayerChains() != null) {
+				for (Chain chain : Map.board.getFirstPlayerChains()) {
+					if (chain.getLength() == 5) {
+						JOptionPane.showMessageDialog(null, "First Player Won");
+						refreshBoard();
+					}
+				}
+				for (Chain chain : Map.board.getSecondPlayerChains()) {
+					if (chain.getLength() == 5) {
+						JOptionPane.showMessageDialog(null, "Second Player Won");
+						refreshBoard();
+					}
+				}
+			}
 		}
 
 		@Override
@@ -161,11 +193,11 @@ private void refreshBoard() {
 
 public PointOnMap getAnotherMoveForAI() throws ExecutionException, InterruptedException {
 	Integer[][] map = Map.board.getNewInstanceOfBoard();
-	PointOnMap maxPoint = getNextMinMaxPoint(1, new Board(map));
-	return maxPoint;
+	PointAndValue maxPoint = getNextMinMaxPoint(1, new Board(map));
+	return maxPoint.point;
 }
 
-private PointOnMap getNextMinMaxPoint(Integer iteration, Board temporaryBoard) throws ExecutionException, InterruptedException {
+private PointAndValue getNextMinMaxPoint(Integer iteration, Board temporaryBoard) throws ExecutionException, InterruptedException {
 	Boolean isMax = null;
 	if (iteration % 2 == 1) {
 		isMax = Boolean.TRUE;
@@ -175,22 +207,36 @@ private PointOnMap getNextMinMaxPoint(Integer iteration, Board temporaryBoard) t
 	Integer max = -1000000;
 	Integer min = 1000000;
 	PointOnMap result = null;
-	for (PointOnMap move : temporaryBoard.getValidMoves((iteration) % 2)) {
+	for (PointOnMap move : temporaryBoard.getValidMoves((Map.currentPlayer.getValue() + (iteration + 1) % 2))) {
 		Board temporarierBoard = new Board(temporaryBoard.getNewInstanceOfBoard());
 		temporarierBoard.addPoint(move);
-		if (iteration < Map.howManyMovesForward) {
-			getNextMinMaxPoint(iteration + 1, temporaryBoard);
+		if (iteration == Map.howManyMovesForward) {
+			Integer temp = temporarierBoard.getValue(Map.currentPlayer.getValue());
+			if (isMax && max < temp) {
+				max = temp;
+				result = move;
+			} else if (!isMax && min > temp) {
+				min = temp;
+				result = move;
+			}
+		} else {
+			PointAndValue pointAndValue;
+			pointAndValue = getNextMinMaxPoint(iteration + 1, temporaryBoard);
+			if (isMax && max < pointAndValue.value) {
+				max = pointAndValue.value;
+				result = pointAndValue.point;
+			} else if (!isMax && min > pointAndValue.value) {
+				min = pointAndValue.value;
+				result = pointAndValue.point;
+			}
 		}
-		Integer temp = temporarierBoard.getValue(Map.currentPlayer.getValue());
-		if (isMax && max < temp) {
-			max = temp;
-			result = move;
-		} else if (!isMax && min > temp) {
-			min = temp;
-			result = move;
-		}
+
 	}
-	return result;
+	if (isMax) {
+		return new PointAndValue(result, max);
+	} else {
+		return new PointAndValue(result, min);
+	}
 }
 
 public static void firstPlayerWonMessage() {

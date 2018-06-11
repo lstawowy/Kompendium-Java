@@ -72,7 +72,7 @@ private void setPlayersAndMapForPlayerVsAI() {
 	playerList.add(firstPlayer);
 	playerList.add(secondPlayer);
 	if (Map.rows == null) {
-		Map.initializeMap(1200, 800, 5, 5, firstPlayer, playerList);
+		Map.initializeMap(1600, 1000, 5, 5, firstPlayer, playerList);
 	}
 }
 
@@ -85,7 +85,7 @@ private void setPlayersAndMapForAIVsAI() {
 	playerList.add(firstPlayer);
 	playerList.add(secondPlayer);
 	if (Map.rows == null) {
-		Map.initializeMap(1200, 800, 5, 5, firstPlayer, playerList);
+		Map.initializeMap(1600, 1000, 5, 5, firstPlayer, playerList);
 	}
 }
 
