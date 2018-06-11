@@ -8,8 +8,7 @@ private PointOnMap startPoint;
 private PointOnMap endPoint;
 private Integer value;
 
-public Chain(Boolean leftSideLimit, Boolean rightSideLimit, Integer length, PointOnMap startPoint, PointOnMap endPoint)
-{
+public Chain(Boolean leftSideLimit, Boolean rightSideLimit, Integer length, PointOnMap startPoint, PointOnMap endPoint) {
 	this.leftSideLimit = leftSideLimit;
 	this.rightSideLimit = rightSideLimit;
 	this.length = length;
@@ -93,7 +92,6 @@ public Integer countValue() {
 		return 0;
 	}
 }
-
 
 
 }

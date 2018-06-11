@@ -405,20 +405,6 @@ public Integer[][] addPoint(PointOnMap pointOnMap) {
 	return this.board;
 }
 
-public void checkIfNotWon() {
-	getChains();
-	for (Chain chain : firstPlayerChains) {
-		if (chain.countValue() == 1000) {
-			DrawPanel.firstPlayerWonMessage();
-		}
-	}
-	for (Chain chain : secondPlayerChains) {
-		if (chain.countValue() == 1000) {
-			DrawPanel.firstPlayerWonMessage();
-		}
-	}
-}
-
 public List<PointOnMap> getValidMoves(Integer currentPlayerValue) {
 	List<PointOnMap> validMoves = new ArrayList<>();
 	for (int r = 0; r < board.length; r++) {

@@ -2,18 +2,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
 public class DrawPanel extends JPanel {
-	JFrame frame;
+JFrame frame;
 
 public static void main(String[] args) {
 	DrawPanel drawPanel = new DrawPanel();
 	drawPanel.drawGameFrame();
 }
 
-public void drawGameFrame(){
+public void drawGameFrame() {
 	frame = new JFrame("Tic Tac Toe");
 	frame.setSize(Map.width, Map.height);
 	frame.setLocationRelativeTo(null);
@@ -21,13 +22,13 @@ public void drawGameFrame(){
 	frame.setResizable(false);
 	frame.setVisible(true);
 	frame.addMouseListener(createNewMouseListener());
-	setBackground(new Color(129, 135, 73));
+	setBackground(new Color(138, 184, 226));
 	frame.setContentPane(this);
 	addShapes();
 	frame.paintComponents(frame.getGraphics());
 }
 
-public void drawSettingsFrame(){
+public void drawSettingsFrame() {
 	frame = new JFrame("Settings");
 	frame.setSize(Map.width, Map.height);
 	frame.setLocationRelativeTo(null);
@@ -45,11 +46,6 @@ static Color randomColor() {
 	float b = rand.nextFloat();
 	Color ret = new Color(r, g, b);
 	return ret;
-}
-
-public static void secondPlayerWonMessage() {
-	JOptionPane.showMessageDialog(null, "Second player won");
-	new GUI();
 }
 
 public void addShapes() {
@@ -72,7 +68,7 @@ public void addShapes() {
 	}
 }
 
-public MouseListener createNewMouseListener(){
+public MouseListener createNewMouseListener() {
 	return new MouseListener() {
 		@Override
 		public void mouseClicked(MouseEvent e) {
@@ -93,6 +89,21 @@ public MouseListener createNewMouseListener(){
 					Map.board.addPoint(new PointOnMap(x / (Map.width / Map.columns), y / (Map.height / Map.rows), Map.currentPlayer.getValue()));
 					Map.nextPlayer();
 				}
+				Map.board.getChains();
+				if (Map.board.getFirstPlayerChains() != null && Map.board.getSecondPlayerChains() != null) {
+					for (Chain chain : Map.board.getFirstPlayerChains()) {
+						if (chain.getLength() == 5) {
+							JOptionPane.showMessageDialog(null, "First Player Won");
+
+						}
+					}
+					for (Chain chain : Map.board.getSecondPlayerChains()) {
+						if (chain.getLength() == 5) {
+							JOptionPane.showMessageDialog(null, "Second Player Won");
+							drawGameFrame();
+						}
+					}
+				}
 				addShapes();
 				frame.paintComponents(frame.getGraphics());
 				if (Map.currentPlayer.getAIEnabled()) {
@@ -107,7 +118,23 @@ public MouseListener createNewMouseListener(){
 					addShapes();
 					frame.paintComponents(frame.getGraphics());
 				}
+				Map.board.getChains();
+				if (Map.board.getFirstPlayerChains() != null && Map.board.getSecondPlayerChains() != null) {
+					for (Chain chain : Map.board.getFirstPlayerChains()) {
+						if (chain.getLength() == 5) {
+							JOptionPane.showMessageDialog(null, "First Player Won");
+							refreshBoard();
+						}
+					}
+					for (Chain chain : Map.board.getSecondPlayerChains()) {
+						if (chain.getLength() == 5) {
+							JOptionPane.showMessageDialog(null, "Second Player Won");
+							refreshBoard();
+						}
+					}
+				}
 			}
+
 
 		}
 
@@ -122,6 +149,14 @@ public MouseListener createNewMouseListener(){
 		}
 	};
 
+}
+
+private void refreshBoard() {
+	Map.listOfShapes.clear();
+	Map.listOfShapes = new ArrayList<>();
+	Map.board = new Board(new Integer[Map.rows][Map.columns]);
+	frame.paintComponents(frame.getGraphics());
+	Map.listOfShapes = new ArrayList<>();
 }
 
 public PointOnMap getAnotherMoveForAI() throws ExecutionException, InterruptedException {
@@ -169,13 +204,19 @@ public void paintComponent(Graphics g) {
 	super.paintComponent(g2d);
 	for (int i = 0; i < (Map.board.getBoard().length); i++) {
 		g2d.setColor(new Color(0, 0, 0));
+		int x = (Map.width / Map.board.getBoard()[0].length);
 		int y = (Map.height / Map.board.getBoard().length);
-		g2d.drawLine(0, i * y, Map.width, i * y);
+		g2d.drawLine(15, i * y - 29, Map.width - 35, i * y - 29);
+		g2d.drawLine(15, i * y - 31, Map.width - 35, i * y - 31);
+		g2d.drawLine(15, i * y - 30, Map.width - 35, i * y - 30);
 	}
 	for (int i = 0; i < (Map.board.getBoard()[0].length); i++) {
 		g2d.setColor(new Color(0, 0, 0));
 		int x = (Map.width / Map.board.getBoard()[0].length);
-		g2d.drawLine(i * x, 0, i * x, Map.height);
+		int y = (Map.height / Map.board.getBoard().length);
+		g2d.drawLine(i * x - 7, 15, i * x - 7, Map.height - 55);
+		g2d.drawLine(i * x - 6, 15, i * x - 6, Map.height - 55);
+		g2d.drawLine(i * x - 5, 15, i * x - 5, Map.height - 55);
 	}
 	for (Shape s : Map.listOfShapes)
 		s.draw(g2d);

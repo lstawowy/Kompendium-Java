@@ -15,7 +15,6 @@ public static Integer howManyThreads = 8;
 public static Integer howManyMovesForward = 1;
 
 
-
 public static void initializeMap(Integer _width, Integer _height, Integer _rows, Integer _columns, Board _board, Player _currentPlayer, List<Player> _players) {
 	width = _width;
 	height = _height;
@@ -39,7 +38,6 @@ public static void initializeMap(Integer _width, Integer _height, Integer _rows,
 
 public static void addOnBoard(Integer value, Integer column, Integer row) {
 	board.addPoint(new PointOnMap(row, column, value));
-	board.checkIfNotWon();
 }
 
 public static Player nextPlayer() {
